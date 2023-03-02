@@ -1,0 +1,51 @@
+package com.utility;
+
+import javax.management.loading.PrivateClassLoader;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Sign_into_Nykaa {
+	
+	public static WebDriver driver;
+	
+	public Sign_into_Nykaa(WebDriver driver) {
+		 this.driver = driver;
+		 PageFactory.initElements( driver,this);
+	}
+	@FindBy(xpath ="//button[text()='Login In']")
+    private WebElement login;
+	
+	@FindBy(xpath ="//input[@type='email']")
+	private WebElement email_click;
+	
+	@FindBy(xpath ="emailMobile")
+	private WebElement email_send;
+	
+	@FindBy(xpath ="//button[@type='submit']")
+	private WebElement pass_click;
+	
+	@FindBy(xpath ="//button[@type='button'])[2]")
+	private WebElement submit;
+
+	
+	
+	public WebElement getLogin() {
+		return login;
+		
+	}
+	public WebElement getEmail_send() {
+		return email_send;
+	}
+	public WebElement getpass_click() {
+		return pass_click;
+	}
+	
+	public WebElement getPass_send() {
+		return pass_send;
+	}
+	
+}
+

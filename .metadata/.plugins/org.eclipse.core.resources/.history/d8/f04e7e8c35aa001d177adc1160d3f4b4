@@ -1,0 +1,30 @@
+package com.utility;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Cash_on_delivery {
+       
+	 public static WebDriver driver;
+	 
+	 public Cash_on_delivery(WebDriver driver) {
+		 
+		 this.driver = driver;
+		 PageFactory.initElements( driver,this);
+	 }
+	 @FindBy(xpath = "//p[text()='Cash on delivery']")
+	 private WebElement Cashondelivery;
+	 
+	 @FindBy(xpath = "//button[text()='place order']")
+	 private WebElement click;
+	 
+	 public WebElement getCashondelivery() {
+		 return Cashondelivery;
+	 }
+	 public WebElement getClick() {
+		 return  click;
+	 }
+
+}

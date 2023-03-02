@@ -1,0 +1,73 @@
+package com.utility;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Cancel_order {
+
+	public static WebDriver driver;
+
+	public Cancel_order(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath = "(//button[@type='button'])[1]")
+	private WebElement username;
+
+	@FindBy(xpath = "(//a[text()='order")
+	private WebElement orders;
+
+	@FindBy(xpath = "(//span[text()='Order Details'])[1]")
+	private WebElement select_order;
+
+	@FindBy(xpath = "//button[text()='Cancel Order']")
+	private WebElement cancel_order;
+
+	@FindBy(xpath = "//div[@class='layout horizontal center p15 bg-white dropdown-header']")
+	private WebElement reason;
+
+	@FindBy(xpath = "//div[text()='Ordered a product I did not need']")
+	private WebElement reason_select;
+
+	@FindBy(xpath = "//button[text()='Cancel order']")
+	private WebElement cancel;
+
+	@FindBy(xpath = "(//button[@type='button'])[9]")
+	private WebElement confirm;
+
+	public WebElement getUsername() {
+		return username;
+	}
+
+	public WebElement getOrders() {
+		return orders;
+	}
+
+	public WebElement getSelect_order() {
+		return select_order;
+	}
+
+	public WebElement getCancel_order() {
+		return cancel_order;
+	}
+
+	public WebElement getReason() {
+		return reason;
+	}
+
+	public WebElement getReason_select() {
+		return reason_select;
+	}
+
+	public WebElement getCancel() {
+		return cancel;
+	}
+
+	public WebElement getConfirm() {
+		return confirm;
+	}
+
+}

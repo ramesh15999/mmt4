@@ -1,0 +1,11 @@
+package Project_Amazon.com.Amazon;
+
+import org.testng.annotations.Test;
+
+public class Runner {
+	@Test
+	public void browserLaunch() {
+		
+	}
+
+}

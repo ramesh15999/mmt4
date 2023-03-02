@@ -1,0 +1,8 @@
+package com.mavenAsp;
+
+import java.util.ArrayList;
+
+public class List {
+	 ArrayList<object> list = new ArrayList<E>()
+
+}

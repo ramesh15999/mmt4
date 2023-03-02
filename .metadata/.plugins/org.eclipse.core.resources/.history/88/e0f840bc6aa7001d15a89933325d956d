@@ -1,0 +1,15 @@
+Feature: Nykaa Shopping Cart 
+	As a shopper, I want to add products to my cart and proceed to checkout.
+  
+Scenario: order a item 
+
+	Given user can launch the url																
+	When user can go to the skin tab 
+	And user can go to select skin wash
+	Then the order is successfully placed  switch to facewash tab
+	
+Scenario:  add the product in cart 
+	Given user can select the prefered face wash 
+	When  user can select the shade of the face wash
+	And  user can add the product to the bag 
+	Then user can noe see the product in the cart

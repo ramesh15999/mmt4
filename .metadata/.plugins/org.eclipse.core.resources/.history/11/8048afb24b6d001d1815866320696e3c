@@ -1,0 +1,26 @@
+package com.work;
+
+public class casting_method {
+    public static void main(String[] args) {
+		//narrowing casting
+    	
+        double a =1682439d;
+        short b =(short)a;
+        System.out.println(b);
+        
+        
+        char c =('y');
+        float d =(float)c;
+        System.out.println(d);
+        		
+        		
+        		
+        		;
+     
+    	  	    
+
+	}
+  
+	
+}
+

@@ -1,0 +1,374 @@
+package com.cucumber;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Base_Class {
+
+	public static WebDriver driver;
+	
+	public static void launch_browser(String value) {
+
+		switch (value.toLowerCase()) {
+
+		case "chrome":
+
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			break;
+
+		case "firefox":
+
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+			driver.manage().window().maximize();
+			break;
+
+		case "edge":
+
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+			driver.manage().window().maximize();
+			break;
+
+		default:
+
+			System.err.println("The browser is not supported.");
+		}
+
+	}
+
+	public static void webdriver_methods(String value) {
+
+		String input = value.toLowerCase();
+
+		if (input.equals("title")) {
+
+			String title = driver.getTitle();
+			System.out.println("Title of the Current Page:" + title);
+
+		}
+
+		else if (input.equals("current url")) {
+
+			String Current_url = driver.getCurrentUrl();
+			System.out.println("Current Url:" + Current_url);
+
+		}
+
+		else if (input.equals("page source")) {
+
+			String Page_Source = driver.getPageSource();
+			System.out.println("Page Source:" + Page_Source);
+
+		}
+
+		else if (input.equals("forward")) {
+			driver.navigate().forward();
+		}
+
+		else if (input.equals("back")) {
+			driver.navigate().back();
+		}
+
+		else if (input.equals("refresh")) {
+			driver.navigate().refresh();
+		}
+
+		else if (input.equals("close")) {
+			driver.close();
+		}
+
+		else if (input.equals("quit")) {
+			driver.quit();
+		}
+
+		else if (input.equals("window handle")) {
+
+			String window_handle = driver.getWindowHandle();
+			System.out.println("Window Handle:" + window_handle);
+		}
+		
+		else if (input.equals("window handles")) {
+			
+			Set<String> window_handles = driver.getWindowHandles();
+			for(String window_handle:window_handles) {
+				System.out.println(window_handle);
+				driver.switchTo().window(window_handle);
+			}
+		}
+		else {
+			System.err.println("Invalid comment");
+		}
+	}
+
+	public static void url(String value, String input) {
+
+		String val = value.toLowerCase();
+
+		if (val.equals("navigate")) {
+			driver.navigate().to(input);
+		}
+
+		else if (val.equals("get")) {
+			driver.get(input);
+		}
+	}
+
+	public static void screenshot(String name) throws IOException {
+
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File destination = new File(
+				"C:\\Users\\admin\\eclipse-workspace\\Cucumber.IO\\Screenshot" +name+ ".png");
+		FileUtils.copyFile(source, destination);
+	}
+
+	public static void webelement_methods(String value, WebElement element) {
+
+		Actions ac = new Actions(driver);
+
+		String input = value.toLowerCase();
+
+		if (input.equals("click")) {
+			element.click();
+		} else if (input.equals("text")) {
+			String Text = element.getText();
+			System.out.println(Text);
+		} else if (input.equals("is displayed")) {
+			boolean displayed = element.isDisplayed();
+			System.out.println(displayed);
+		} else if (input.equals("is enabled")) {
+			boolean enabled = element.isEnabled();
+			System.out.println(enabled);
+		}
+
+		else if (input.equals("is selected")) {
+			boolean selected = element.isSelected();
+			System.out.println(selected);
+		}
+
+		else if (input.equals("clear")) {
+			element.clear();
+		}
+
+	}
+
+	public static void Actions(String value, WebElement element) {
+
+		Actions ac = new Actions(driver);
+
+		String input = value.toLowerCase();
+
+		if (input.equals("move to element")) {
+			ac.moveToElement(element).build().perform();
+			;
+		} else if (input.equals("mouse click")) {
+			ac.click(element).build().perform();
+		} else if (input.equals("right click")) {
+			ac.contextClick(element).build().perform();
+		} else if (input.equals("double click")) {
+			ac.doubleClick(element).build().perform();
+		}
+
+		else if (input.equals("click and hold")) {
+			ac.clickAndHold(element).build().perform();
+		}
+	}
+
+	public static void input(WebElement element, String value) {
+
+		element.sendKeys(value);
+
+	}
+
+	public static void waits_implicit() {
+
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	}
+
+	public static void waits_explicit(WebElement element, int value) {
+
+		WebDriverWait wait = new WebDriverWait(driver, value);
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+
+	public static void alert(String value) {
+
+		String input = value.toLowerCase();
+
+		if (input.equals("accept")) {
+			driver.switchTo().alert().accept();
+		} else if (value.equals("dismiss")) {
+			driver.switchTo().alert().dismiss();
+		} else if (value.equals("text")) {
+			driver.switchTo().alert().getText();
+		}
+	}
+
+	public static void alert_input(String value) {
+
+		driver.switchTo().alert().sendKeys(value);
+	}
+
+	public static void keyboard(String value) throws AWTException {
+
+		Robot r = new Robot();
+
+		String input = value.toLowerCase();
+		if (input.equals("down")) {
+			r.keyPress(KeyEvent.VK_DOWN);
+			r.keyRelease(KeyEvent.VK_DOWN);
+
+		} else if (input.equals("up")) {
+			r.keyPress(KeyEvent.VK_UP);
+			r.keyRelease(KeyEvent.VK_UP);
+
+		}
+
+		else if (input.equals("enter")) {
+			r.keyPress(KeyEvent.VK_ENTER);
+			r.keyRelease(KeyEvent.VK_ENTER);
+
+		}
+
+		else if (input.equals("tab")) {
+			r.keyPress(KeyEvent.VK_CONTROL);
+			r.keyPress(KeyEvent.VK_TAB);
+			r.keyRelease(KeyEvent.VK_CONTROL);
+			r.keyRelease(KeyEvent.VK_TAB);
+
+		}
+
+	}
+
+	public static void select(String value, WebElement element, String input) {
+
+		value.toLowerCase();
+
+		Select s = new Select(element);
+
+		if (value.equals("value")) {
+
+			s.selectByValue(input);
+
+		} else if (value.equals("text")) {
+
+			s.selectByVisibleText(input);
+
+		} else if (value.equals("index")) {
+
+			int i = Integer.parseInt(input);
+			s.selectByIndex(i);
+		}
+
+	}
+
+	public static void deselect(String value, WebElement element, String input) {
+
+		value.toLowerCase();
+
+		Select s = new Select(element);
+
+		if (value.equals("value")) {
+
+			s.deselectByValue(input);
+
+		} else if (value.equals("text")) {
+
+			s.deselectByVisibleText(input);
+
+		} else if (value.equals("index")) {
+
+			int i = Integer.parseInt(input);
+			s.deselectByIndex(i);
+		}
+
+	}
+
+	public static void select_addon(String value, WebElement element) {
+
+		value.toLowerCase();
+
+		Select s = new Select(element);
+
+		if (value.equals("is multiple")) {
+			boolean result = s.isMultiple();
+			System.out.println(result);
+		} else if (value.equals("all options")) {
+			List<WebElement> opt = s.getOptions();
+			System.out.println(opt);
+			for (int i = 0; i < opt.size(); i++) {
+				System.out.println(opt.get(i).getText());
+			}
+		} else if (value.equals("all selected options")) {
+			List<WebElement> opt = s.getAllSelectedOptions();
+			System.out.println(opt);
+			for (int i = 0; i < opt.size(); i++) {
+				System.out.println(opt.get(i).getText());
+			}
+		}
+
+		else if (value.equals("first selected options")) {
+			WebElement opt = s.getFirstSelectedOption();
+			System.out.println(opt.getText());
+
+		}
+
+		else if (value.equals("deselect")) {
+			s.deselectAll();
+		}
+	}
+
+	public static void frame(String value, String input) {
+
+		value.toLowerCase();
+
+		if (value.equals("index")) {
+			int i = Integer.parseInt(input);
+			driver.switchTo().frame(i);
+		}
+
+		else if (value.equals("id or name")) {
+			driver.switchTo().frame(input);
+		}
+
+	}
+
+	public static void scroll(int value) {
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0," + value + ")");
+
+	}
+
+	public static void attribute(WebElement element, String value) {
+
+		element.getAttribute(value);
+
+	}
+
+}

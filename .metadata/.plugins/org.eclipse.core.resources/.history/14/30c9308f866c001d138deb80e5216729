@@ -1,0 +1,29 @@
+package com.work;
+
+public class Game_design {
+	public public Game_design() {
+		this("God of war")
+		System.out.println("Killer god:Kratos");
+	}
+	
+	public Game_design(String name) {
+		this(1.500);
+		System.out.println("company:"+name);
+		
+	}
+	
+	public Game_design(int collectionl) {
+		System.out.println("collection:"+collectionl);
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		Game_design a = new Game_design();	
+	}
+		
+	
+		
+	
+  
+}

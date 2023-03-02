@@ -1,0 +1,16 @@
+Feature: Nykaa Shopping Cart
+  As a shopper, I want to add products to my cart and proceed to checkout.
+  
+Scenario: order a item after launching the url
+
+Given user can launch the url
+When user can go to the 
+And the user proceeds to the checkout page and fills in the required details
+And the user selects the payment method and confirms the order
+Then the order is successfully placed
+
+Scenario: Cancelling the order
+Given that a user has an active order on Nykaa website
+When the user navigates to the order history section on the website
+And the user selects the option to cancel the order
+Then the order is successfully cancelled and the user is notified about the cancellation.

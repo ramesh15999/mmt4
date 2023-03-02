@@ -1,0 +1,25 @@
+package com.stepdefinition;
+
+import org.openqa.selenium.WebDriver;
+
+	
+public class MyStepDefinitions {
+
+	    private int result;
+
+	    @Given("^I have a number (\\d+)$")
+	    public void given_number(int num) {
+	        result = num;
+	    }
+
+	    @When("^I add (\\d+) to the number$")
+	    public void add_number(int num) {
+	        result += num;
+	    }
+
+	    @Then("^The result should be (\\d+)$")
+	    public void verify_result(int expectedResult) {
+	        Assert.assertEquals(result, expectedResult, "Incorrect result");	
+	
+	
+}

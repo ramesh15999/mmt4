@@ -1,0 +1,27 @@
+package com.utility;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Add_Address {
+
+	public static WebDriver driver;
+
+	public Add_Address(WebDriver driver) {
+
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath = "//div[@class='css-1pan5g8 e1gecm6xo']")
+	private WebElement new_address;
+
+	@FindBy(xpath = "(//input[@type='number])[1]")
+	private WebElement enter_pincode;
+
+	@FindBy(xpath = "(//input[@type='text'])[4]")
+	private WebElement enter_name;
+
+}

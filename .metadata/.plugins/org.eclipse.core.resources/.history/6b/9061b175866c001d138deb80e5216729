@@ -1,0 +1,9 @@
+package com.work;
+
+public class Laptop {
+	public static void main(String[] args) {
+		
+	}
+    
+
+}

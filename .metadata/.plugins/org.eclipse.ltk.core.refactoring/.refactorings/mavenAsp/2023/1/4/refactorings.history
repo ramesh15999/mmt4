@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Driver&apos; to &apos;Annotations/src/test/java&apos;&#x0D;&#x0A;- Original project: &apos;mavenAsp&apos;&#x0D;&#x0A;- Destination element: &apos;Annotations/src/test/java&apos;&#x0D;&#x0A;- Original element: &apos;Driver&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move folder" destination="=Annotations/src\/test\/java=/test=/true=/=/optional=/true=/=/maven.pomderived=/true=/" element1="Driver" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1674711122484" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,15 @@
+Feature: To order and cancel Nykaa product
+
+  
+Scenario: order a item 
+
+	Given user can launch the url																
+	When user can go to the skin tab 
+	And user can go to select skin wash
+	Then user will be able to successsfully  switch to facewash tab
+	
+Scenario:  add the product in cart 
+	Given user can select the prefered face wash 
+	When  user can select the shade of the face wash
+	And  user can add the product to the bag 
+	Then user can noe see the product in the cart

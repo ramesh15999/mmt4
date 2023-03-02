@@ -1,0 +1,26 @@
+package org.runner;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+
+import com.cucumber.Base_Class;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "C:\\Users\\admin\\eclipse-workspace\\Cucumber.IO\\src\\test\\java", glue = "org.stepdefinition")
+public class Runner_Class extends Base_Class {
+
+	@BeforeClass
+	public static void browser() {
+		launch_browser("chrome");
+	}
+
+	@AfterClass
+	public static void tear_down() {
+		webdriver_methods("quit");
+	}
+}

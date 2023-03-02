@@ -1,0 +1,26 @@
+package org.runner;
+
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+
+import com.Cucumber.cucumber.IO.Base_class;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "C:\\Users\\admin\\eclipse-workspace\\cucumber.IO")
+public class Runner_class extends Base_class {
+	
+	@BeforeClass 
+     public static void browser() {
+		getBrowser("chrome");
+	}
+	
+//@AfterClass
+//public static void teardown() {
+	//WebDriver_methods("quit");
+	}
+
+

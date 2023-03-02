@@ -1,0 +1,45 @@
+package org.Stepdefinition;
+
+
+import org.openqa.selenium.interactions.Actions;
+
+import com.Cucumber.cucumber.IO.Base_class;
+
+import Sign_Page_model.Page_Object_Manager;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class Nykaa_pro extends Base_class{
+	Page_object_Manager pom;
+	
+	@Given("user can launch the url")
+	public void user_can_launch_the_url() {
+		
+		url ("get","https://www.nykaa.com/");
+	}
+
+		@When("user can go to the skin tab")
+		public void user_can_go_to_the_tab() {
+			
+			 waits_implict();
+			 pom = new Page_Object_Manager(driver);
+			 Actions("move to element", pom.getPs().getSkin());
+			 
+		
+	}
+		
+		@When("user can go select skin wash")
+		public void user_can_go_select_skin_wash() {
+			webelement_method("click", pom.getPs().getselect());
+			
+	}
+		
+		@Then("user will be able to successfully switch to face tab.")
+		public void user_will_be_able_to_successfully_switch_to_face_wash_tab() {
+			webdriver_methods("window handles");
+		}
+		
+}
+
+

@@ -1,0 +1,38 @@
+package com.work;
+
+import java.util.Scanner;
+
+public class Laptop {
+	public static void main(String[] args) {
+		Scanner a = new Scanner(System.in);
+		System.out.println("enter the breed of device");
+		String b = a.nextLine();
+		System.out.println("type:"+b);
+		System.out.println();
+		
+		System.out.println("enter the version of processor");
+		String c = a.next();
+		System.out.println(" version of processor:"+c);
+		System.out.println();
+		
+		System.out.println("processor series");
+        int d = a.nextInt();
+        System.out.println("series:"+d);
+        System.out.println();
+          
+        System.out.println("display scale");
+        char e = a.next().charAt(d);
+        System.out.println("display:"+e);
+        System.out.println();
+         
+        
+        System.out.println("price");
+        float f = a.nextFloat();
+        System.out.println("price:"+f);
+        System.out.println();
+        S
+        
+	}
+    
+
+}

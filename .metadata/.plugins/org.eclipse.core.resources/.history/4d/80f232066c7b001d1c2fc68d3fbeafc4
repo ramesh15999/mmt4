@@ -1,0 +1,11 @@
+
+public class Browser_launch {
+    public static void main(String[] args) {
+		System.setProperties("webdriver.chrome.driver",C:\Users\admin\eclipse-workspace\Selenium\Webdriver\chromedriver.exe);
+	}
+
+		
+			
+
+		
+}

@@ -1,0 +1,17 @@
+package com.work;
+
+public class casting_method {
+    public static void main(String[] args) {
+		//narrowing casting
+    	
+        double a =1682439d;
+        short b;
+        System.out.println(b);
+     
+    	  	    
+
+	}
+  
+	
+}
+

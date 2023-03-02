@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\admin\git\Rest_API"/>
+			<item value="C:\Users\admin\eclipse-workspace\Annotations"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="internal"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="Project_Amazon.com.Amazon"/>
+			<item value="com.projectcucumber.NykaaWebsite"/>
+			<item value="com.Restassuredapi.Assuredapi"/>
+			<item value="com.Cucumber.cucumber.IO"/>
+			<item value="com.DataDriven.Datadriven"/>
+			<item value="com.cucumber.cucumber.io"/>
+			<item value="com.google.trial_project"/>
+			<item value="com.google.learning1"/>
+			<item value="com.Annotation.testngproject"/>
+			<item value="com.Annotation.Annotations"/>
+			<item value="com.Annotayion.ANNOTATION"/>
+			<item value="com.runner.TestNG"/>
+		</list>
+		<list key="groupId">
+			<item value="Project_Amazon"/>
+			<item value="com.projectcucumber"/>
+			<item value="com.Restassuredapi"/>
+			<item value="com.Cucumber"/>
+			<item value="com.DataDriven"/>
+			<item value="com.cucumber"/>
+			<item value="com.google"/>
+			<item value="com.Annotation"/>
+			<item value="com.Annotayion"/>
+			<item value="com.runner"/>
+		</list>
+		<list key="artifactId">
+			<item value="com.Amazon"/>
+			<item value="NykaaWebsite"/>
+			<item value="Assuredapi"/>
+			<item value="cucumber.IO"/>
+			<item value="Datadriven"/>
+			<item value="cucumber.io"/>
+			<item value="trial_project"/>
+			<item value="learning1"/>
+			<item value="testngproject"/>
+			<item value="Annotations"/>
+			<item value="ANNOTATION"/>
+			<item value="TestNG"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\admin\eclipse-workspace\MakeMyTrip"/>
+			<item value="C:\Users\admin\eclipse-workspace\MAkeMyTrip"/>
+			<item value="C:\Users\admin\eclipse-workspace\mavenAsp"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenDependenciesWizardPage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenCheckoutLocationPage">
+		<list key="scmUrl">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>
